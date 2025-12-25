@@ -3,14 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
+    <title>Landing Page Optimized</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --font-main: 'Be Vietnam Pro', sans-serif;
+            --font-serif: 'Lora', serif;
+            --gray-dark: #E2E2E2;
+            --gray-light: #EEEEEE;
+            --text-color: #333;
+            --footer-bg: #d9d9d9;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Be Vietnam Pro', sans-serif;
+            font-family: var(--font-main);
             background-color: #f5f5f5;
-            color: #333;
+            color: var(--text-color);
         }
         .container {
             width: 100%;
@@ -28,8 +36,8 @@
             justify-content: center;
             text-align: center;
         }
-        .bg-gray { background-color: #E2E2E2; border-radius: 8px; }
-        .bg-light { background-color:#EEEEEE; }
+        .bg-gray { background-color: var(--gray-dark); border-radius: 8px; }
+        .bg-light { background-color: var(--gray-light); }
         .text-bold { font-weight: 700; font-size: 20px; }
         header {
             display: flex;
@@ -42,24 +50,21 @@
         .logo { width: 200px; height: 60px; }
         .menu { width: 820px; height: 34px; max-width: 100%; }
         .btn {
-            width: 120px;
-            height: 42px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
+            width: 120px; height: 42px;
+            font-weight: 700; font-size: 16px;
+            cursor: pointer; border: none;
             transition: 0.3s;
         }
         .btn:hover { background-color: #d1d1d1; }
         section { padding: 60px 40px; width: 100%; }
-        h2 {
-            font-family: 'Lora', serif;
+        .section-title {
+            font-family: var(--font-serif);
             font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 40px;
-            text-align: center;
+            font-size: 24px;          
+            width: 100%; max-width: 600px; height: 80px;
+            margin: 0 auto 40px auto; 
         }
-        .grid-2 {
+        .grid-intro {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -67,18 +72,18 @@
         }
         .intro-text { height: 267px; width: 100%; }
         .intro-img { height: 520px; width: 100%; }
-        .list {
+        .list-items {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
         }
-        .item-big { width: 380px; height: 420px; max-width: 100%; }
-        .item-small { width: 278px; height: 300px; max-width: 100%; }
+        .item-big   { width: 380px;   height: 420px; max-width: 100%; }
+        .item-mid   { width: 216px;   height: 300px; max-width: 100%; }
+        .item-small { width: 277.5px; height: 300px; max-width: 100%; }
         footer {
-            width: 100%;
-            height: 72px;
-            background-color: #d9d9d9;
+            width: 100%; height: 72px;
+            background-color: var(--footer-bg);
             margin-top: auto;
         }
         @media (max-width: 1200px) {
@@ -89,11 +94,11 @@
             header { padding: 20px; flex-direction: column; height: auto; gap: 15px; }
             .logo, .menu, .btn { width: 100%; }
             .menu { height: 50px; }
-            .grid-2 { grid-template-columns: 1fr; }
-            .intro-text, .intro-img, .item-big, .item-small {
+            .grid-intro { grid-template-columns: 1fr; }
+            .intro-text, .intro-img, .item-big, .item-mid, .item-small {
                 width: 100%;
                 height: auto;
-                aspect-ratio: 1/1;
+                aspect-ratio: 1/1; 
                 padding: 20px;
             }
             .intro-text { aspect-ratio: auto; min-height: 200px; }
@@ -104,16 +109,12 @@
 <body>
     <div class="container">
         <header>
-            <div class="bg-gray flex-center logo">
-                <span class="text-bold">Logo</span>
-            </div>
-            <div class="bg-gray flex-center menu">
-                <span class="text-bold">Menu</span>
-            </div>
+            <div class="bg-gray flex-center logo"><span class="text-bold">Logo</span></div>
+            <div class="bg-gray flex-center menu"><span class="text-bold">Menu</span></div>
             <button type="button" class="bg-gray flex-center btn">Button</button>
         </header>
         <section class="bg-light">
-            <div class="grid-2">
+            <div class="grid-intro">
                 <article class="bg-gray flex-center intro-text">
                     <span class="text-bold">Content</span>
                 </article>
@@ -123,8 +124,8 @@
             </div>
         </section>
         <section>
-            <h2>Title</h2>
-            <div class="list">
+            <h2 class="bg-gray flex-center section-title">Title</h2>
+            <div class="list-items">
                 <article class="bg-gray flex-center item-big"><span class="text-bold">Item</span></article>
                 <article class="bg-gray flex-center item-big"><span class="text-bold">Item</span></article>
                 <article class="bg-gray flex-center item-big"><span class="text-bold">Item</span></article>
@@ -134,18 +135,18 @@
             </div>
         </section>
         <section class="bg-light">
-            <h2>Title</h2>
-            <div class="list">
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
+            <h2 class="bg-gray flex-center section-title">Title</h2>
+            <div class="list-items">
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
             </div>
         </section>
         <section>
-            <h2>Title</h2>
-            <div class="list">
+            <h2 class="bg-gray flex-center section-title">Title</h2>
+            <div class="list-items">
                 <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
                 <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
                 <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
@@ -155,6 +156,7 @@
         <footer class="flex-center">
             <span class="text-bold">Footer</span>
         </footer>
+
     </div>
 </body>
 </html>
