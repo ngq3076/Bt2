@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BT2</title> 
+    <title>BT2</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -63,10 +63,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
-            max-width: 1366px;
+            width: 88%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 83px;
+            padding: 20px 0;
             height: 100px;
             gap: 30px;
         }
@@ -80,17 +80,15 @@
         .section-title {
             font-family: var(--font-serif);
             font-weight: 700;
-            font-size: clamp(18px, 2.2vw, 20px);
+            font-size: clamp(18px, 2.5vw, 24px);
             width: 100%;
             max-width: 600px;
             height: 80px;
             margin: 0 auto 40px auto;
         }
         .grid-intro, .list-items {
-            width: 100%;
-            max-width: 1366px;
-            padding: 0 83px;
-            margin: 0 auto;
+            width: 95%; 
+            max-width: 1200px;
         }
         .grid-intro {
             display: flex;
@@ -154,14 +152,11 @@
             margin-top: auto;
         }
         @media (max-width: 1365px) {
-            header {
-                padding: 20px 40px;
+            header, .grid-intro, .list-items {
+                width: 92%;
             }
             section {
                 padding: 60px 0;
-            }
-            .grid-intro, .list-items {
-                padding: 0 40px;
             }
             .intro-text, .intro-img {
                 width: calc((100% - var(--gap)) / 2);
@@ -179,15 +174,12 @@
                 width: calc((100% - (4 * var(--gap))) / 5);
             }
         }
-        @media (max-width: 1023px) {
-            section {
+        @media (max-width: 1024px) {
+            header, .grid-intro, .list-items {
+                width: 95%;
+            }
+            section { 
                 padding: 40px 0;
-            }
-            header {
-                padding: 20px;
-            }
-            .grid-intro, .list-items {
-                padding: 0 20px;
             }
         }
         @media (max-width: 768px) {
