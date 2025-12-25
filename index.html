@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page Optimized Ratio</title>
+    <title>Landing Page Text Fix</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,12 +15,12 @@
             --footer-bg: #d9d9d9;
             --gap: 30px;
         }
-        * {margin: 0; padding: 0; box-sizing: border-box;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: var(--font-main);
             background-color: #f5f5f5;
             color: var(--text-color);
-        
+        }
         .container {
             width: 100%;
             max-width: 1366px;
@@ -37,9 +37,25 @@
             justify-content: center;
             text-align: center;
         }
-        .bg-gray {background-color: var(--gray-dark); border-radius: 8px;}
-        .bg-light {background-color: var(--gray-light);}
-        .text-bold {font-weight: 700; font-size: 20px;}
+        .bg-gray {
+            background-color: var(--gray-dark);
+            border-radius: 8px;
+            padding: 10px; 
+            overflow: hidden; 
+        }
+        .bg-light { background-color: var(--gray-light); }
+        .text-bold {
+            font-weight: 700;
+            line-height: 1.2;
+            font-size: clamp(14px, 2vw, 20px);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 8; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         header {
             display: flex;
             align-items: center;
@@ -48,23 +64,21 @@
             padding: 20px 40px;
             height: 100px;
         }
-        .logo {width: 200px; height: 60px; flex-shrink: 0;}
-        .menu {width: 100%; max-width: 820px; height: 34px; flex: 1;}
+        .logo { width: 200px; height: 60px; flex-shrink: 0; }
+        .menu { width: 100%; max-width: 820px; height: 34px; flex: 1; }
         .btn {
             width: 120px; height: 42px;
-            font-weight: 700; font-size: 16px;
-            cursor: pointer; border: none;
-            transition: 0.3s;
-            flex-shrink: 0;
+            cursor: pointer; transition: 0.3s;
+            flex-shrink: 0; user-select: none;
         }
-        .btn:hover {background-color: #d1d1d1;}
-        section {padding: 60px 40px; width: 100%;}
+        .btn:hover { background-color: #d1d1d1; }
+        section { padding: 60px 40px; width: 100%; }
         .section-title {
             font-family: var(--font-serif);
             font-weight: 700;
-            font-size: 20px;            
+            font-size: clamp(18px, 2.5vw, 24px); 
             width: 100%; max-width: 600px; height: 80px;
-            margin: 0 auto 40px auto; 
+            margin: 0 auto 40px auto;
         }
         .grid-intro {
             display: grid;
@@ -72,46 +86,35 @@
             gap: 40px;
             align-items: center;
         }
-        .intro-text {width: 100%; aspect-ratio: 585/267;}
-        .intro-img {width: 100%; aspect-ratio: 585/520;}
+        .intro-text { width: 100%; aspect-ratio: 585/267; }
+        .intro-img { width: 100%; aspect-ratio: 585/520; }
         .list-items {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: var(--gap);
         }
-        .item-big { 
-            width: calc((100% - (2 * var(--gap))) / 3); 
-            aspect-ratio: 380/420;
-        }
-        .item-mid { 
-            width: calc((100% - (4 * var(--gap))) / 5); 
-            aspect-ratio: 216/300;
-        }
-        .item-small { 
-            width: calc((100% - (3 * var(--gap))) / 4); 
-            aspect-ratio: 278/300;
-        }
+        .item-big { width: calc((100% - (2 * var(--gap))) / 3); aspect-ratio: 380/420; }
+        .item-mid { width: calc((100% - (4 * var(--gap))) / 4); aspect-ratio: 277.5/300; }  
+        .item-small { width: calc((100% - (4 * var(--gap))) / 5); aspect-ratio: 216/300; }
         footer {
             width: 100%; height: 72px;
             background-color: var(--footer-bg);
             margin-top: auto;
         }
         @media (max-width: 768px) {
-            header {padding: 20px; flex-direction: column; height: auto; gap: 15px;}
-            .logo, .menu, .btn {width: 100%; max-width: none;}
-            .menu {height: 50px;}
-            .grid-intro {grid-template-columns: 1fr;}
+            header { padding: 20px; flex-direction: column; height: auto; gap: 15px; }
+            .logo, .menu, .btn { width: 100%; max-width: none; }
+            .menu { height: 50px; }
+            .grid-intro { grid-template-columns: 1fr; }
             .item-big, .item-mid, .item-small {
-                width: 100%; 
-                aspect-ratio: auto;
-                height: 300px;
-                padding: 20px;
+                width: 100%; aspect-ratio: auto;
+                height: 300px; padding: 20px;
             }
-            .intro-text, .intro-img {width: 100%; aspect-ratio: auto;}
-            .intro-text {height: 200px;}
-            .intro-img {height: 300px;}
-            section {padding: 40px 20px;}
+            .intro-text, .intro-img { width: 100%; aspect-ratio: auto; }
+            .intro-text { height: 200px; }
+            .intro-img { height: 300px; }
+            section { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -120,20 +123,16 @@
         <header>
             <div class="bg-gray flex-center logo"><span class="text-bold">Logo</span></div>
             <div class="bg-gray flex-center menu"><span class="text-bold">Menu</span></div>
-            <button type="button" class="bg-gray flex-center btn">Button</button>
+            <div class="bg-gray flex-center btn"><span class="text-bold">Button</span></div>
         </header>
         <section class="bg-light">
             <div class="grid-intro">
-                <article class="bg-gray flex-center intro-text">
-                    <span class="text-bold">Content</span>
-                </article>
-                <figure class="bg-gray flex-center intro-img">
-                    <span class="text-bold">Image</span>
-                </figure>
+                <article class="bg-gray flex-center intro-text"><span class="text-bold">Content</span></article> 
+                <figure class="bg-gray flex-center intro-img"><span class="text-bold">Image</span></figure>
             </div>
         </section>
         <section>
-            <h2 class="bg-gray flex-center section-title">Title</h2>
+            <h2 class="bg-gray flex-center section-title">Title</h2> 
             <div class="list-items">
                 <article class="bg-gray flex-center item-big"><span class="text-bold">Item</span></article>
                 <article class="bg-gray flex-center item-big"><span class="text-bold">Item</span></article>
@@ -146,20 +145,20 @@
         <section class="bg-light">
             <h2 class="bg-gray flex-center section-title">Title</h2>
             <div class="list-items">
-                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-small"><span class="text-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</span></article>
+                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
             </div>
         </section>
         <section>
             <h2 class="bg-gray flex-center section-title">Title</h2>
             <div class="list-items">
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
-                <article class="bg-gray flex-center item-small"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
+                <article class="bg-gray flex-center item-mid"><span class="text-bold">Item</span></article>
             </div>
         </section>
         <footer class="flex-center">
